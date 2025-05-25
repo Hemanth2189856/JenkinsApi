@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "6bdd1f4c-72ab-4a77-a54c-3bb6960d3649",
+		"name": "1-Jenkins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43604848",
+		"_collection_link": "https://hemanth-9096.postman.co/workspace/HemanthWorkSpace~8580cf2e-3075-44e3-a584-857f1a8059cc/collection/43604848-6bdd1f4c-72ab-4a77-a54c-3bb6960d3649?action=share&source=collection_link&creator=43604848"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"hemanth\",\r\n    \"age\" :10\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/post",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
