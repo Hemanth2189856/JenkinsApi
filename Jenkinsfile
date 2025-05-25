@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+   stage('Dev build completed') {
+            steps {
+                // Checkout source code from the connected Git repo
+               echo "dev completed build"
+            }
+        }
+
         stage('Clean workspace') {
             steps {
                 // Checkout source code from the connected Git repo
@@ -22,6 +29,12 @@ pipeline {
                         -e ./BookingAPIEnv.postman_environment.json -n 3 \
                         -r cli,htmlextra,html
                 """
+            }
+        }
+stage('deploying to prod') {
+            steps {
+                // Checkout source code from the connected Git repo
+               echo "deploying to prod"
             }
         }
     }
